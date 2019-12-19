@@ -4,13 +4,21 @@ Utility for geocoding addresses with the HERE maps api
 
 This library takes a csv file as input, and writes json file as output including lat/lon. It writes json b/c javascript can simply parse it and languages like golang allow you to use structs to marshall. It could be changed to write csv or any other format if you like.
 
-### Installation
+### CLI tool
 
-Setup go on your machine. Clone this repo into you go path.
+The compiled CLI tool is checked into this repo so you don't need to install anything or run build to use it.. `./geocoder` is an executable so just run it. 
 
-Run for development
 
+This following example runs it against the example input file.
+```bash
+geocoder --in=./example/basic.csv --out=./example/out.json --apikey="here-maps-api-key"
 ```
+
+### Development
+
+Setup go on your machine. Clone this repo into you go path. Run for development
+
+```bash
 go run main.go --in=./example/basic.csv --out=./example/out.json --apikey="here-maps-api-key"
 ```
 
